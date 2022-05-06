@@ -214,39 +214,6 @@ stat_change_position()
 leukemia_average = "The average fatalities per year was:", avg_fatalities3
 statistic_writer.write(leukemia_average, font=("Arial", 9, "bold"))
 
-#BREAST CANCER MIN MAX AVR variables defined
-lowest_fatalities4 = cancer_data['Breast'][0]
-highest_fatalities4 = cancer_data['Breast'][0]
-min_year4 = cancer_data['Year'][0]
-max_year4 = cancer_data['Year'][0]
-sum_fatalities4 = 0
-avg_fatalities4 = 0
-
-#calculate minimum, maximum and average fatalities
-#for Leukemia
-for i in range(len(cancer_data['Breast'])):
-    if (cancer_data['Breast'][i] > highest_fatalities4):
-        highest_fatalities4 = cancer_data['Breast'][i]
-        max_year4 = cancer_data['Year'][i]
-    if (cancer_data['Breast'][i] < lowest_fatalities4):
-        lowest_fatalities4 = cancer_data['Breast'][i]
-        min_year4 = cancer_data['Year'][i]
-    sum_fatalities4 += cancer_data['Breast'][i]
-
-avg_fatalities4 = sum_fatalities4/len(cancer_data['Breast'])
-
-#write statistics for colon/rectum cancer
-breast_most = "Most fatalities per year:", highest_fatalities4, "occured in", max_year4
-statistic_writer.pencolor("pink")
-stat_change_position()
-statistic_writer.write(breast_most, font=("Arial", 9, "bold"))
-stat_change_position()
-breast_least = "Least fatalities per year:", lowest_fatalities4, "occured in", min_year4
-statistic_writer.write(breast_least, font=("Arial", 9, "bold"))
-stat_change_position()
-breast_average = "The average fatalities per year was:", avg_fatalities4
-statistic_writer.write(breast_average, font=("Arial", 9, "bold"))
-
 #PROSTATE CANCER MIN MAX AVR variables defined
 lowest_fatalities5 = cancer_data['Prostate'][0]
 highest_fatalities5 = cancer_data['Prostate'][0]
@@ -280,10 +247,148 @@ stat_change_position()
 prostate_average = "The average fatalities per year was:", avg_fatalities5
 statistic_writer.write(prostate_average, font=("Arial", 9, "bold"))
 
+#BREAST CANCER MIN MAX AVR variables defined
+lowest_fatalities4 = cancer_data['Breast'][0]
+highest_fatalities4 = cancer_data['Breast'][0]
+min_year4 = cancer_data['Year'][0]
+max_year4 = cancer_data['Year'][0]
+sum_fatalities4 = 0
+avg_fatalities4 = 0
+
+#calculate minimum, maximum and average fatalities
+#for Leukemia
+for i in range(len(cancer_data['Breast'])):
+    if (cancer_data['Breast'][i] > highest_fatalities4):
+        highest_fatalities4 = cancer_data['Breast'][i]
+        max_year4 = cancer_data['Year'][i]
+    if (cancer_data['Breast'][i] < lowest_fatalities4):
+        lowest_fatalities4 = cancer_data['Breast'][i]
+        min_year4 = cancer_data['Year'][i]
+    sum_fatalities4 += cancer_data['Breast'][i]
+
+avg_fatalities4 = sum_fatalities4/len(cancer_data['Breast'])
+
+#write statistics for colon/rectum cancer
+breast_most = "Most fatalities per year:", highest_fatalities4, "occured in", max_year4
+statistic_writer.pencolor("pink")
+stat_change_position()
+statistic_writer.write(breast_most, font=("Arial", 9, "bold"))
+stat_change_position()
+breast_least = "Least fatalities per year:", lowest_fatalities4, "occured in", min_year4
+statistic_writer.write(breast_least, font=("Arial", 9, "bold"))
+stat_change_position()
+breast_average = "The average fatalities per year was:", avg_fatalities4
+statistic_writer.write(breast_average, font=("Arial", 9, "bold"))
+
 #move to new line before adding more 
 #statistics
-statistic_writer.goto(10, -60)
-statistic_writer.write("hi", font=("Arial", 9, "bold"))
+statistic_writer.penup()
+statistic_writer.goto(-35, -80)
+
+#stat writer position change function (for row 2)
+def stat_change_position2():
+  statistic_writer.penup()
+  stat_writer_ychange2 = statistic_writer.ycor()-20
+  statistic_writer.goto(-35, stat_writer_ychange2)
+  statistic_writer.pendown()
+
+#BLADDER CANCER MIN MAX AVR variables defined
+lowest_fatalities6 = cancer_data['Bladder'][0]
+highest_fatalities6 = cancer_data['Bladder'][0]
+min_year6 = cancer_data['Year'][0]
+max_year6 = cancer_data['Year'][0]
+sum_fatalities6 = 0
+avg_fatalities6 = 0
+
+#calculate minimum, maximum and average fatalities
+#for bladder cancer
+for i in range(len(cancer_data['Bladder'])):
+    if (cancer_data['Bladder'][i] > highest_fatalities6):
+        highest_fatalities6 = cancer_data['Bladder'][i]
+        max_year6 = cancer_data['Year'][i]
+    if (cancer_data['Bladder'][i] < lowest_fatalities6):
+        lowest_fatalities6 = cancer_data['Bladder'][i]
+        min_year6 = cancer_data['Year'][i]
+    sum_fatalities6 += cancer_data['Bladder'][i]
+
+avg_fatalities6 = sum_fatalities6/len(cancer_data['Bladder'])
+
+#write statistics for bladder cancer
+bladder_most = "Most fatalities per year:", highest_fatalities6, "occured in", max_year6
+statistic_writer.pencolor("cyan")
+statistic_writer.write(bladder_most, font=("Arial", 9, "bold"))
+stat_change_position2()
+bladder_least = "Least fatalities per year:", lowest_fatalities6, "occured in", min_year6
+statistic_writer.write(bladder_least, font=("Arial", 9, "bold"))
+stat_change_position2()
+bladder_average = "The average fatalities per year was:", avg_fatalities6
+statistic_writer.write(bladder_average, font=("Arial", 9, "bold"))
+
+#PANCREATIC CANCER MIN MAX AVR variables defined
+lowest_fatalities7 = cancer_data['Pancreatic'][0]
+highest_fatalities7 = cancer_data['Pancreatic'][0]
+min_year7 = cancer_data['Year'][0]
+max_year7 = cancer_data['Year'][0]
+sum_fatalities7 = 0
+avg_fatalities7 = 0
+
+#calculate minimum, maximum and average fatalities
+#for pancreatic cancer
+for i in range(len(cancer_data['Pancreatic'])):
+    if (cancer_data['Pancreatic'][i] > highest_fatalities7):
+        highest_fatalities7 = cancer_data['Pancreatic'][i]
+        max_year7 = cancer_data['Year'][i]
+    if (cancer_data['Pancreatic'][i] < lowest_fatalities7):
+        lowest_fatalities7 = cancer_data['Pancreatic'][i]
+        min_year7 = cancer_data['Year'][i]
+    sum_fatalities7 += cancer_data['Pancreatic'][i]
+
+avg_fatalities7 = sum_fatalities7/len(cancer_data['Pancreatic'])
+
+#write statistics for pancreatic cancer
+stat_change_position2()
+pancreatic_most = "Most fatalities per year:", highest_fatalities7, "occured in", max_year7
+statistic_writer.pencolor("yellow")
+statistic_writer.write(pancreatic_most, font=("Arial", 9, "bold"))
+stat_change_position2()
+pancreatic_least = "Least fatalities per year:", lowest_fatalities7, "occured in", min_year7
+statistic_writer.write(pancreatic_least, font=("Arial", 9, "bold"))
+stat_change_position2()
+pancreatic_average = "The average fatalities per year was:", avg_fatalities7
+statistic_writer.write(pancreatic_average, font=("Arial", 9, "bold"))
+
+#NON HODGKIN MIN MAX AVR variables defined
+lowest_fatalities8 = cancer_data['Non-Hodgkin'][0]
+highest_fatalities8 = cancer_data['Non-Hodgkin'][0]
+min_year8 = cancer_data['Year'][0]
+max_year8 = cancer_data['Year'][0]
+sum_fatalities8 = 0
+avg_fatalities8 = 0
+
+#calculate minimum, maximum and average fatalities
+#for non-hogkin lymphoma
+for i in range(len(cancer_data['Non-Hodgkin'])):
+    if (cancer_data['Non-Hodgkin'][i] > highest_fatalities8):
+        highest_fatalities8 = cancer_data['Non-Hodgkin'][i]
+        max_year8 = cancer_data['Year'][i]
+    if (cancer_data['Non-Hodgkin'][i] < lowest_fatalities8):
+        lowest_fatalities8 = cancer_data['Non-Hodgkin'][i]
+        min_year8 = cancer_data['Year'][i]
+    sum_fatalities8 += cancer_data['Non-Hodgkin'][i]
+
+avg_fatalities8 = sum_fatalities8/len(cancer_data['Non-Hodgkin'])
+
+#write statistics for pancreatic cancer
+stat_change_position2()
+non_hodgkin_most = "Most fatalities per year:", highest_fatalities8, "occured in", max_year8
+statistic_writer.pencolor("black")
+statistic_writer.write(non_hodgkin_most, font=("Arial", 9, "bold"))
+stat_change_position2()
+non_hodgkin_least = "Least fatalities per year:", lowest_fatalities8, "occured in", min_year8
+statistic_writer.write(non_hodgkin_least, font=("Arial", 9, "bold"))
+stat_change_position2()
+non_hodgkin_avg = "The average fatalities per year was:", avg_fatalities8
+statistic_writer.write(non_hodgkin_avg, font=("Arial", 9, "bold"))
 
 #plot all cancer deaths on graph
 plt.plot(cancer_data['Year'], cancer_data['Liver'], color='gray')
